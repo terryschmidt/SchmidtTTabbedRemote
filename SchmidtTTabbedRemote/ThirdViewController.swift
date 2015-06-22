@@ -32,7 +32,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func savePressed(sender: UIButton) {
-        if (countElements(textBox.text) <= 4 && countElements(textBox.text) >= 1) {
+        if (count(textBox.text) <= 4 && count(textBox.text) >= 1) {
             segControlSlotToChange = favSegment.titleForSegmentAtIndex(favSegment.selectedSegmentIndex)!.toInt()!
             textTheyWant = textBox.text
             channelNumToSave = channelNum.text!

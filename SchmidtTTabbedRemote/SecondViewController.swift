@@ -98,7 +98,7 @@ class SecondViewController: UIViewController {
         // Create the action.
         let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive) { action in
             let cancelController = UIAlertController(title: "Request cancelled.", message: "", preferredStyle: .Alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .Default, nil)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
             cancelController.addAction(okayAction)
             self.presentViewController(cancelController, animated: true, completion: nil)
         }
@@ -114,7 +114,7 @@ class SecondViewController: UIViewController {
             }
             self.stateLabel.text = stateRequested
             
-            let okayAction = UIAlertAction(title: "Okay", style: .Default, nil)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
             okayController.addAction(okayAction)
             self.presentViewController(okayController, animated: true, completion: nil)
         }
