@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    @IBOutlet weak var powerSwitch: UISwitch!
+    @IBOutlet weak var powerSwitch: UISwitch?
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var oneButton: UIButton!
@@ -29,18 +29,12 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var currentChanLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
     var digitArray = [String]()
-    var savedChannelArray = ["01", "01", "01", "01"]
     
     override func viewWillAppear(animated: Bool) {
         favChanSegControl.setTitle(channelLabelArray[0], forSegmentAtIndex: 0)
         favChanSegControl.setTitle(channelLabelArray[1], forSegmentAtIndex: 1)
         favChanSegControl.setTitle(channelLabelArray[2], forSegmentAtIndex: 2)
         favChanSegControl.setTitle(channelLabelArray[3], forSegmentAtIndex: 3)
-        
-        savedChannelArray[0] = channelNumArray[0]
-        savedChannelArray[1] = channelNumArray[1]
-        savedChannelArray[2] = channelNumArray[2]
-        savedChannelArray[3] = channelNumArray[3]
     }
     
     @IBAction func numPressed(sender: UIButton) {
@@ -89,7 +83,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func favChanSelected(sender: UISegmentedControl) {
         var index = favChanSegControl.selectedSegmentIndex
-        currentChanLabel.text = savedChannelArray[index]
+        currentChanLabel.text = channelNumArray[index]
     }
     
     @IBAction func switchToggled(sender: UISwitch) {
