@@ -34,8 +34,8 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     @IBAction func savePressed(sender: UIButton) {
         if (count(textBox.text) <= 4 && count(textBox.text) >= 1) {
             segControlSlotToChange = favSegment.titleForSegmentAtIndex(favSegment.selectedSegmentIndex)!.toInt()!
-            textTheyWant = textBox.text
-            channelNumToSave = channelNum.text!
+            channelLabelArray[segControlSlotToChange - 1] = textBox.text
+            channelNumArray[segControlSlotToChange - 1] = channelNum.text!
         } else {
             let alertController = UIAlertController(title: "Sorry, your label is either too long or too short.", message:"Label must be 1 to 4 characters.", preferredStyle: UIAlertControllerStyle.Alert);
             

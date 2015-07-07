@@ -32,8 +32,15 @@ class FirstViewController: UIViewController {
     var savedChannelArray = ["01", "01", "01", "01"]
     
     override func viewWillAppear(animated: Bool) {
-        favChanSegControl.setTitle(textTheyWant, forSegmentAtIndex: segControlSlotToChange - 1)
-        savedChannelArray[segControlSlotToChange - 1] = channelNumToSave
+        favChanSegControl.setTitle(channelLabelArray[0], forSegmentAtIndex: 0)
+        favChanSegControl.setTitle(channelLabelArray[1], forSegmentAtIndex: 1)
+        favChanSegControl.setTitle(channelLabelArray[2], forSegmentAtIndex: 2)
+        favChanSegControl.setTitle(channelLabelArray[3], forSegmentAtIndex: 3)
+        
+        savedChannelArray[0] = channelNumArray[0]
+        savedChannelArray[1] = channelNumArray[1]
+        savedChannelArray[2] = channelNumArray[2]
+        savedChannelArray[3] = channelNumArray[3]
     }
     
     @IBAction func numPressed(sender: UIButton) {

@@ -9,8 +9,12 @@
 import UIKit
 
 var segControlSlotToChange = 3
-var textTheyWant = ""
-var channelNumToSave = "01"
+
+var channelLabelArray = ["", "", "", ""]
+var channelNumArray = ["","","",""]
+
+//var textTheyWant = ""
+//var channelNumToSave = "01"
 
 
 class configInfoHolder: UIViewController {
