@@ -31,10 +31,9 @@ class FirstViewController: UIViewController {
     var digitArray = [String]()
     
     override func viewWillAppear(animated: Bool) {
-        favChanSegControl.setTitle(channelLabelArray[0], forSegmentAtIndex: 0)
-        favChanSegControl.setTitle(channelLabelArray[1], forSegmentAtIndex: 1)
-        favChanSegControl.setTitle(channelLabelArray[2], forSegmentAtIndex: 2)
-        favChanSegControl.setTitle(channelLabelArray[3], forSegmentAtIndex: 3)
+        for (var i = 0; i <= 3; i++) {
+            favChanSegControl.setTitle(channelLabelArray[i], forSegmentAtIndex: i)
+        }
     }
     
     @IBAction func numPressed(sender: UIButton) {
