@@ -35,7 +35,12 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
         if (count(textBox.text) <= 4 && count(textBox.text) >= 1) {
             var index = favSegment.selectedSegmentIndex
             channelLabelArray[index] = textBox.text
-            channelNumArray[index] = channelNum.text!
+            
+            if let num = channelNum.text {
+                channelNumArray[index] = num
+            }
+            
+            //channelNumArray[index] = channelNum.text!
         } else {
             let alertController = UIAlertController(title: "Sorry, your label is either too long or too short.", message:"Label must be 1 to 4 characters.", preferredStyle: UIAlertControllerStyle.Alert);
             
