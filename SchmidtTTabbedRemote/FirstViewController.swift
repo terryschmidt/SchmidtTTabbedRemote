@@ -37,13 +37,13 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func numPressed(sender: UIButton) {
-        var incomingDigit: String = sender.currentTitle!  // grab the digit coming
+        let incomingDigit: String = sender.currentTitle!  // grab the digit coming
         if(digitArray.count == 0 || digitArray.count == 1) { //if its the first digit
             digitArray.append(incomingDigit) // just add it and dont do anything else
         }
         
         if(digitArray.count == 2) { // if we now have 2 digits...
-            var newChan = digitArray[0] + digitArray[1] // put the new channel here
+            let newChan = digitArray[0] + digitArray[1] // put the new channel here
             
             if(newChan == "00") { // channel 00 not allowed!
                 digitArray.removeAll() // just delete those values then
@@ -59,29 +59,29 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func channelIncrement(sender: UIButton) {
-        var currentChan = currentChanLabel.text!.toInt()
+        let currentChan = Int(currentChanLabel.text!)
         
         if(currentChan! + 1 > 99) {  // bounds checking.  if its out of bounds, dont do anything
             
         } else {
-            var newChan = currentChan! + 1
+            let newChan = currentChan! + 1
             currentChanLabel.text = "\(String(newChan))" // set the new channel
         }
     }
     
     @IBAction func channelDecrement(sender: UIButton) {
-        var currentChan = currentChanLabel.text!.toInt()
+        let currentChan = Int(currentChanLabel.text!)
         
         if(currentChan! - 1 < 1) { // bounds checking
             
         } else {
-            var newChan = currentChan! - 1
+            let newChan = currentChan! - 1
             currentChanLabel.text = "\(String(newChan))" // set the new channel
         }
     }
     
     @IBAction func favChanSelected(sender: UISegmentedControl) {
-        var index = favChanSegControl.selectedSegmentIndex
+        let index = favChanSegControl.selectedSegmentIndex
         currentChanLabel.text = channelNumArray[index]
     }
     

@@ -15,7 +15,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var favSegment: UISegmentedControl!
 
     @IBAction func stepperPressed(sender: UIStepper) {
-        var val = Int(sender.value)
+        let val = Int(sender.value)
      
         if val <= 99 && val >= 1 {
             channelNum.text = Int(sender.value).description
@@ -32,9 +32,9 @@ class ThirdViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func savePressed(sender: UIButton) {
-        if (count(textBox.text) <= 4 && count(textBox.text) >= 1) {
-            var index = favSegment.selectedSegmentIndex
-            channelLabelArray[index] = textBox.text
+        if (textBox.text!.characters.count <= 4 && textBox.text!.characters.count >= 1) {
+            let index = favSegment.selectedSegmentIndex
+            channelLabelArray[index] = textBox.text!
             
             if let num = channelNum.text {
                 channelNumArray[index] = num
